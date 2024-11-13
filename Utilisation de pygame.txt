@@ -1,0 +1,2 @@
+Utilisation de pygame : ouvrir python3 / ouvrir pygame dans python3.
+

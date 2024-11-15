@@ -1,43 +1,41 @@
-# Example file showing a circle moving on screen
 import pygame
-
-# pygame setup
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+
+screen = pygame.display.set_mode((600,400))
 clock = pygame.time.Clock()
-running = True
-dt = 0
 
-player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
+# old type, "bitmap" cursor
+cursor1 = pygame.cursors.diamond
 
-while running:
-    # poll for events
-    # pygame.QUIT event means the user clicked X to close your window
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+# new type, "system" cursor
+cursor2 = pygame.SYSTEM_CURSOR_HAND
 
-    # fill the screen with a color to wipe away anything from last frame
+# new type, "color" cursor
+surf = pygame.Surface((30, 25), pygame.SRCALPHA)
+pygame.draw.rect(surf, (0,255,0), [0, 0, 10, 10])
+pygame.draw.rect(surf, (0,255,0), [20, 0, 10, 10])
+pygame.draw.rect(surf, (255,0,0), [5, 5, 20, 20])
+cursor3 = pygame.cursors.Cursor((15,5), surf)
+
+cursors = [cursor1, cursor2, cursor3]
+cursor_index = 0
+
+# the arguments to set_cursor can be a Cursor object
+# or it will construct a Cursor object internally from the arguments
+pygame.mouse.set_cursor(cursors[cursor_index])
+
+while True:
     screen.fill("purple")
+    
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            cursor_index += 1
+            cursor_index %= len(cursors)
+            pygame.mouse.set_cursor(cursors[cursor_index])
 
-    pygame.draw.circle(screen, "red", player_pos, 40)
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            raise SystemExit
 
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_z]:
-        player_pos.y -= 300 * dt
-    if keys[pygame.K_s]:
-        player_pos.y += 300 * dt
-    if keys[pygame.K_q]:
-        player_pos.x -= 300 * dt
-    if keys[pygame.K_d]:
-        player_pos.x += 300 * dt
-
-    # flip() the display to put your work on screen
     pygame.display.flip()
-
-    # limits FPS to 60
-    # dt is delta time in seconds since last frame, used for framerate-
-    # independent physics.
-    dt = clock.tick(60) / 1000
-
-pygame.quit()
+    clock.tick(144)

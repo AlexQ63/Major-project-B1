@@ -18,4 +18,5 @@ while running:
     screen.fill("white")
     pygame.mouse.set_cursor(pygame.cursors.arrow)
 
+    pygame.image.load()
     pygame.display.flip()

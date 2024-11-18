@@ -14,3 +14,14 @@ Particulatiré :
 
 -Page d'accueil (Alexandre)
 -Serveur (Cédric)
+
+-Page d'accueil : 
+    -Réaliser les animations et autres phases de design :
+        -Loading screen avec le gif (ou le .json) avec le fond d'écran en noir / de couleur foncé en rapport avec l'Egypte
+        -Les pages des Options : voir ce qu'il est possible de mettre dedans : "Désactiver le son" - 
+        -Réaliser le plateau de jeu et prévoir la rotation des pièces
+        -Prévoir une musique ou plusieurs musiques en son ambiant libre de droit, dans le thème, avec un changement de musique pour une musique plus épique dès qu'il y a moins de 5 pièces d'un des 2 côtés du plateau de jeu.
+    -Réaliser l'interaction des menus directement vers leur chemin. Mettre les écrits en surbrillance dès que la souris est dessus.
+    
+    
+    

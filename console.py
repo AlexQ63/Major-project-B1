@@ -1,4 +1,5 @@
 import pygame
+import os
 
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
@@ -18,5 +19,6 @@ while running:
     screen.fill("white")
     pygame.mouse.set_cursor(pygame.cursors.arrow)
 
-    pygame.image.load()
+    main_image = pygame.image.load(os.path.join("Image_du_jeu.jpg"))
+    screen.blit(main_image, (0,0))
     pygame.display.flip()

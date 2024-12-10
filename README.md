@@ -18,7 +18,7 @@ Le plateau de jeu est composé de 8 lignes et 10 colonnes. Le but principal du j
 est d'éclairer le pharaon adverse en utilisant lasers et miroirs. Certaines cases sont
 réservés à un joueur en fonction de leur couleur (cases rouges pour le joueur rouge,
 cases grises pour le joueur gris) :
-[plateau de jeu](https://ibb.co/4SZfLTZ)
+[plateau de jeu](https://ibb.co/7bW562W)
 
 Les illustrations suivantes et certaines portions du texte sont tirées des [règles](https://www.boardspace.net/khet/rules_english.pdf) officielles. N'hésitez pas à les consulter.
 
